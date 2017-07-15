@@ -48,6 +48,7 @@ public class Data {
                 "https://lh3.googleusercontent.com/0-BzaWtxoAnsBjQ_wzUcKxyF07XE7v2Kkg1ogPVUdzmQpvaz118uHQEGU6BdtzJuzfo=h1264");
         addCompany(zara);
         addCompany(pacsun);
+        addCompany(banana);
         
         Item zaraDressOne = new Item(
                                  1,
