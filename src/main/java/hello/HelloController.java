@@ -73,12 +73,36 @@ public class HelloController {
     }
 
     @RequestMapping("/textSearch")
-    public ArrayList<Item> textSearch(@RequestParam(value="text") String text) {
-        return _data.textSearch(text);
+    public ArrayList<FeedItem> textSearch(@RequestParam(value="text") String text) {
+        ArrayList<Item> itemList =  _data.textSearch(text);
+        ArrayList<FeedItem> feedItemList = new ArrayList<>();
+        for (Item item: itemList) {
+            Company company = _data.getCompanyById(item.getCompanyId());
+            feedItemList.add(new FeedItem(
+                    company.getLogoUri(),
+                    company.getName(),
+                    item.getName(),
+                    item.getImageUri(),
+                    item.getNumLikes(),
+                    item.getTags()));
+        }
+        return feedItemList;
     }
 
     @RequestMapping("/tagSearch")
-    public ArrayList<Item> tagSearch(@RequestParam(value="tag") String tag) {
-        return _data.tagSearch(tag);
+    public ArrayList<FeedItem> tagSearch(@RequestParam(value="tag") String tag) {
+        ArrayList<Item> itemList =  _data.tagSearch(tag);
+        ArrayList<FeedItem> feedItemList = new ArrayList<>();
+        for (Item item: itemList) {
+            Company company = _data.getCompanyById(item.getCompanyId());
+            feedItemList.add(new FeedItem(
+                    company.getLogoUri(),
+                    company.getName(),
+                    item.getName(),
+                    item.getImageUri(),
+                    item.getNumLikes(),
+                    item.getTags()));
+        }
+        return feedItemList;
     }
 }
