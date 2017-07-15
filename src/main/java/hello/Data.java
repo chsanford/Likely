@@ -27,7 +27,12 @@ public class Data {
         tags.add("fashion");
         tags.add("tech");
         tags.add("aesthetic");
-        
+        tags.add("buttons");
+        tags.add("men");
+        tags.add("women");
+        tags.add("casual");
+        tags.add("pants");
+
         User stephanie = new User(1, "Stephanie", LocalDate.of(1997, 12, 10), "Female");
         User jagan = new User(2, "Jagan", LocalDate.of(1995, 3, 16), "Male");
         User kayla = new User(3, "Kayla", LocalDate.of(1996, 7, 31), "Female");
@@ -35,49 +40,51 @@ public class Data {
         addUser(jagan);
         addUser(kayla);
         
-        Company li = new Company(1, "LinkedIn", "We're a clothes company now.",
-                "https://lh3.googleusercontent.com/00APBMVQh3yraN704gKCeM63KzeQ-zHUi5wK6E9TjRQ26McyqYBt-zy__4i8GXDAfeys=w300");
-        Company google = new Company(1, "Google", "Samesies.",
+        Company  zara = new Company(1, "Zara", "Zara",
+                "https://static.zara.net/stdstatic/1.42.2-b.6/images/logo-zara-16.svg");
+        Company pacsun = new Company(2, "PacSun", "Samesies.",
                 "https://lh3.googleusercontent.com/0-BzaWtxoAnsBjQ_wzUcKxyF07XE7v2Kkg1ogPVUdzmQpvaz118uHQEGU6BdtzJuzfo=h1264");
-        addCompany(li);
-        addCompany(google);
+        Company banana = new Company(3, "Banana Republic", "Banana Republic.",
+                "https://lh3.googleusercontent.com/0-BzaWtxoAnsBjQ_wzUcKxyF07XE7v2Kkg1ogPVUdzmQpvaz118uHQEGU6BdtzJuzfo=h1264");
+        addCompany(zara);
+        addCompany(pacsun);
         
-        Item shirt500 = new Item(
+        Item zaraDressOne = new Item(
                                  1,
-                                 "500M shirt",
-                                 "500 members!",
-                                 new ArrayList<String>(Arrays.asList("shirt", "aesthetic", "tech")),
+                                 "Midi Dress with Buttons",
+                                 "Midi Dress with Buttons",
+                                 new ArrayList<String>(Arrays.asList("dress", "buttons", "midi", "casual", "women")),
                                  LocalDate.of(2017, 5, 9),
-                                 li.getId(),
-                                "https://cdn.shopify.com/s/files/1/0014/1962/products/product_UT_human_shirt_itemview_1024x1024.png?v=1484851103");
-        Item hipsterScarf = new Item(
+                                 zara.getId(),
+                                "https://static.zara.net/photos///2017/I/0/1/p/7952/675/104/2/w/1024/7952675104_2_3_1.jpg?ts=1499674298795");
+        Item pacsunPants = new Item(
                                      2,
-                                     "Hipster scarf",
-                                     "Look how cool we are.",
-                                     new ArrayList<String>(Arrays.asList("scarf", "aesthetic", "fashion")),
+                                     "Skinny Stretch Chino Pants",
+                                     "Skinny Stretch Chino Pants",
+                                     new ArrayList<String>(Arrays.asList("skinny", "chino", "pants", "casual", "men")),
                                      LocalDate.of(2017, 6, 19),
-                                     li.getId(),
-                                    "http://g.nordstromimage.com/ImageGallery/store/product/Zoom/18/_12994598.jpg");
-        Item spinnyHat = new Item(
+                                     pacsun.getId(),
+                                    "http://demandware.edgesuite.net/sits_pod15/dw/image/v2/AAJE_PRD/on/demandware.static/-/Sites-pacsun_storefront_catalog/default/dw12fb8acb/product_images/0133436750005NEW_02_025.jpg?sw=340&sh=528&sm=fit");
+        Item bananaBlazer = new Item(
                                   3,
-                                  "Spinny Hat!",
-                                  "Did I ever tell you I work at Google?",
-                                  new ArrayList<String>(Arrays.asList("hat", "aesthetic", "tech")),
+                                  "Milano Stitch Short Blazer",
+                                  "Milano Stitch Short Blazer?",
+                                  new ArrayList<String>(Arrays.asList("blazer", "aesthetic", "formal", "short blazer", "milano")),
                                   LocalDate.of(2017, 2, 20),
-                                  google.getId(),
-                                  "http://www.villagehatshop.com/photos/product/standard/4511390S61417/mens-hats/mj-panama-straw-outback-hat.jpg");
-        li.addItem(shirt500);
-        li.addItem(hipsterScarf);
-        google.addItem(spinnyHat);
+                                  zara.getId(),
+                                  "http://bananarepublic.gap.com/webcontent/0013/472/720/cn13472720.jpg");
+        zara.addItem(zaraDressOne);
+        pacsun.addItem(pacsunPants);
+        banana.addItem(bananaBlazer);
         
         Category aesthetix = new Category(1, "Aesthetix", "lmao");
         stephanie.addCategory(aesthetix);
-        stephanie.addToCategory(shirt500, aesthetix);
-        stephanie.addToCategory(hipsterScarf, aesthetix);
-        stephanie.addLikedItem(hipsterScarf);
-        kayla.addLikedItem(hipsterScarf);
-        jagan.addLikedItem(hipsterScarf);
-        stephanie.addLikedItem(shirt500);
+        stephanie.addToCategory(zaraDressOne, aesthetix);
+        stephanie.addToCategory(pacsunPants, aesthetix);
+        stephanie.addLikedItem(pacsunPants);
+        kayla.addLikedItem(pacsunPants);
+        jagan.addLikedItem(pacsunPants);
+        stephanie.addLikedItem(zaraDressOne);
     }
     
     public ArrayList<User> getUsers() {
