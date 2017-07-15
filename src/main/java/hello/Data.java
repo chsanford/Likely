@@ -32,6 +32,10 @@ public class Data {
         tags.add("women");
         tags.add("casual");
         tags.add("pants");
+        tags.add("sweater");
+        tags.add("patchy");
+        tags.add("green");
+        tags.add("kids");
 
         User stephanie = new User(1, "Stephanie", LocalDate.of(1997, 12, 10), "Female");
         User jagan = new User(2, "Jagan", LocalDate.of(1995, 3, 16), "Male");
@@ -40,12 +44,12 @@ public class Data {
         addUser(jagan);
         addUser(kayla);
         
-        Company  zara = new Company(1, "Zara", "Zara",
+        Company zara = new Company(1, "Zara", "Zara",
                 "https://static.zara.net/stdstatic/1.42.2-b.6/images/logo-zara-16.svg");
         Company pacsun = new Company(2, "PacSun", "Samesies.",
-                "https://lh3.googleusercontent.com/0-BzaWtxoAnsBjQ_wzUcKxyF07XE7v2Kkg1ogPVUdzmQpvaz118uHQEGU6BdtzJuzfo=h1264");
+                "https://d7olld39l2hok.cloudfront.net/logo/4216303.png");
         Company banana = new Company(3, "Banana Republic", "Banana Republic.",
-                "https://lh3.googleusercontent.com/0-BzaWtxoAnsBjQ_wzUcKxyF07XE7v2Kkg1ogPVUdzmQpvaz118uHQEGU6BdtzJuzfo=h1264");
+                "http://bananarepublic.gap.com/Asset_Archive/BRWeb/content/0013/138/247/assets/Blog_Default_IMG_rev02.svg");
         addCompany(zara);
         addCompany(pacsun);
         addCompany(banana);
@@ -70,13 +74,33 @@ public class Data {
                                   3,
                                   "Milano Stitch Short Blazer",
                                   "Milano Stitch Short Blazer?",
-                                  new ArrayList<String>(Arrays.asList("blazer", "aesthetic", "formal", "short blazer", "milano")),
+                                  new ArrayList<String>(Arrays.asList("blazer", "aesthetic", "formal", "short blazer", "milano", "women")),
                                   LocalDate.of(2017, 2, 20),
                                   zara.getId(),
                                   "http://bananarepublic.gap.com/webcontent/0013/472/720/cn13472720.jpg");
+        Item bananaJacket = new Item(4, "Bomber Sweater Jacket", "Bomber Sweater Jacket",
+                                        new ArrayList<String> (Arrays.asList("bomber", "sweater", "jacket", "men"," casual")),
+                                        LocalDate.of(2017, 2, 20),
+                                        banana.getId(),
+                                        "http://www4.assets-gap.com/webcontent/0013/335/024/cn13335024.jpg");
+
+        Item zaraSweater = new Item(5, "Sleeve Detail Top", "Sleeve Detail Top",
+                                        new ArrayList<String>(Arrays.asList("sweater", "women", "shirt")),
+                                        LocalDate.of(2017, 7, 4),
+                                        zara.getId(),
+                                        "https://static.zara.net/photos///2017/V/0/1/p/5410/024/736/2/w/1920/5410024736_2_1_1.jpg?ts=1485437710694");
+
+        Item zaraSweatshirt = new Item(6, "Green Patchy Sweatshirt", "Green Patchy Sweatshirt",
+                                    new ArrayList<String>(Arrays.asList("sweater", "men", "kids", "green", "patchy")),
+                                    LocalDate.of(2017, 5, 12),
+                                    zara.getId(),
+                                    "https://static.zara.net/photos///2017/V/0/3/p/0371/670/500/2/w/1920/0371670500_1_1_1.jpg?ts=1490871469926");
         zara.addItem(zaraDressOne);
         pacsun.addItem(pacsunPants);
         banana.addItem(bananaBlazer);
+        banana.addItem(bananaJacket);
+        zara.addItem(zaraSweater);
+        zara.addItem(zaraSweatshirt);
         
         Category aesthetix = new Category(1, "Aesthetix", "lmao");
         stephanie.addCategory(aesthetix);
@@ -85,6 +109,7 @@ public class Data {
         stephanie.addLikedItem(pacsunPants);
         kayla.addLikedItem(pacsunPants);
         jagan.addLikedItem(pacsunPants);
+        jagan.addLikedItem(bananaJacket);
         stephanie.addLikedItem(zaraDressOne);
     }
     
