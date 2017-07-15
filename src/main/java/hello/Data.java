@@ -16,7 +16,7 @@ public class Data {
     ArrayList<Company> companies;
     ArrayList<String> tags;
     
-    public Data() throws URISyntaxException {
+    public Data() {
         users = new ArrayList<>();
         companies = new ArrayList<>();
         tags = new ArrayList<>();
