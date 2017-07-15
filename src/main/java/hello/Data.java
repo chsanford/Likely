@@ -49,7 +49,7 @@ public class Data {
                                  new ArrayList<String>(Arrays.asList("shirt", "aesthetic", "tech")),
                                  LocalDate.of(2017, 5, 9),
                                  li.getId(),
-                                 null);
+                                "https://cdn.shopify.com/s/files/1/0014/1962/products/product_UT_human_shirt_itemview_1024x1024.png?v=1484851103");
         Item hipsterScarf = new Item(
                                      2,
                                      "Hipster scarf",
@@ -57,7 +57,7 @@ public class Data {
                                      new ArrayList<String>(Arrays.asList("scarf", "aesthetic", "fashion")),
                                      LocalDate.of(2017, 6, 19),
                                      li.getId(),
-                                     null);
+                                    "http://g.nordstromimage.com/ImageGallery/store/product/Zoom/18/_12994598.jpg");
         Item spinnyHat = new Item(
                                   3,
                                   "Spinny Hat!",
@@ -65,7 +65,7 @@ public class Data {
                                   new ArrayList<String>(Arrays.asList("hat", "aesthetic", "tech")),
                                   LocalDate.of(2017, 2, 20),
                                   google.getId(),
-                                  null);
+                                  "http://www.villagehatshop.com/photos/product/standard/4511390S61417/mens-hats/mj-panama-straw-outback-hat.jpg");
         li.addItem(shirt500);
         li.addItem(hipsterScarf);
         google.addItem(spinnyHat);
