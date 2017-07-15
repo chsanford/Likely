@@ -3,6 +3,8 @@ package hello;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.lang.reflect.Array;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -54,8 +56,20 @@ public class HelloController {
     }
 
     @RequestMapping("/feed")
-    public ArrayList<Item> getListItems(){
-        return _data.getItems();
+    public ArrayList<FeedItem> getListItems(){
+        ArrayList<Item> itemList =  _data.getItems();
+        ArrayList<FeedItem> feedItemList = new ArrayList<>();
+        for (Item item: itemList) {
+            Company company = _data.getCompanyById(item.getCompanyId());
+            feedItemList.add(new FeedItem(
+                    company.getLogoUri(),
+                    company.getName(),
+                    item.getName(),
+                    item.getImageUri(),
+                    item.getNumLikes(),
+                    item.getTags()));
+        }
+        return feedItemList;
     }
 
     @RequestMapping("/textSearch")

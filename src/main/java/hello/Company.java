@@ -1,6 +1,7 @@
 package hello;
 
 import java.lang.reflect.Array;
+import java.net.URI;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,12 +14,14 @@ public class Company {
     private String name;
     private String description;
     private ArrayList<Item> items;
+    private String logoUri;
 
-    public Company(int id, String name, String description) {
+    public Company(int id, String name, String description, String logoUri) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.items = new ArrayList<Item>();
+        this.logoUri = logoUri;
     }
 
     public int getId() {
@@ -55,6 +58,14 @@ public class Company {
 
     public void removeItem(Item delItem) {
         items.remove(delItem);
+    }
+
+    public String getLogoUri() {
+        return logoUri;
+    }
+
+    public void setLogoUri(String logoUri) {
+        this.logoUri = logoUri;
     }
 
     public ArrayList<Item> getTopItems(int daysBefore, int numItems) {

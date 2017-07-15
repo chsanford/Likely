@@ -1,6 +1,8 @@
 package hello;
 
 import java.lang.reflect.Array;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +16,7 @@ public class Data {
     ArrayList<Company> companies;
     ArrayList<String> tags;
     
-    public Data() {
+    public Data() throws URISyntaxException {
         users = new ArrayList<>();
         companies = new ArrayList<>();
         tags = new ArrayList<>();
@@ -33,8 +35,10 @@ public class Data {
         addUser(jagan);
         addUser(kayla);
         
-        Company li = new Company(1, "LinkedIn", "We're a clothes company now.");
-        Company google = new Company(1, "Google", "Samesies.");
+        Company li = new Company(1, "LinkedIn", "We're a clothes company now.",
+                "https://lh3.googleusercontent.com/00APBMVQh3yraN704gKCeM63KzeQ-zHUi5wK6E9TjRQ26McyqYBt-zy__4i8GXDAfeys=w300");
+        Company google = new Company(1, "Google", "Samesies.",
+                "https://lh3.googleusercontent.com/0-BzaWtxoAnsBjQ_wzUcKxyF07XE7v2Kkg1ogPVUdzmQpvaz118uHQEGU6BdtzJuzfo=h1264");
         addCompany(li);
         addCompany(google);
         

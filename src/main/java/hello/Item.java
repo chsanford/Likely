@@ -17,7 +17,7 @@ public class Item {
     private int numLikes;
     private int numSaves;
     private int companyId;
-    private URI imageUri;
+    private String imageUri;
 
     public Item(
             int id,
@@ -26,7 +26,7 @@ public class Item {
             ArrayList<String> tags,
             LocalDate creationDate,
             int companyId,
-            URI imageUri) {
+            String imageUri) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -112,11 +112,11 @@ public class Item {
         companyId = newCompanyId;
     }
 
-    public URI getImageUri() {
+    public String getImageUri() {
         return imageUri;
     }
 
-    public void setImageUri(URI newImageUri) {
+    public void setImageUri(String newImageUri) {
         imageUri = newImageUri;
     }
 
