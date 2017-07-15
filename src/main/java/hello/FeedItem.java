@@ -7,6 +7,54 @@ import java.util.ArrayList;
  * Created by clsanfor on 7/15/17.
  */
 public class FeedItem {
+    public String getCompanyLogoUri() {
+        return companyLogoUri;
+    }
+
+    public void setCompanyLogoUri(String companyLogoUri) {
+        this.companyLogoUri = companyLogoUri;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public String getItemImageUri() {
+        return itemImageUri;
+    }
+
+    public void setItemImageUri(String itemImageUri) {
+        this.itemImageUri = itemImageUri;
+    }
+
+    public int getNumLikes() {
+        return numLikes;
+    }
+
+    public void setNumLikes(int numLikes) {
+        this.numLikes = numLikes;
+    }
+
+    public ArrayList<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
+    }
+
     private String companyLogoUri;
     private String companyName;
     private String itemName;
